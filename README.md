@@ -1,9 +1,5 @@
-fragaria-adapter-rewrite
-========================
 
-Fragaria est un framework de dévelopement web visant à associer autour de Tapestry un ensemble de service préintégré
+fragaria-dsloader-yaml
+======================
 
-Ce repo contient les sources de la première ébauche pour une couche d'abstraction sur les sources de données
-
-
-Ce code n'est pas à utiliser en production, il est au stade de la réflexion.
+Package pour utiliser des fichier yaml comme métadonnées pour les datasources de fragaria
