@@ -8,9 +8,9 @@ import nc.isi.fragaria_adapter_rewrite.resources.ConnectionDataBuilder;
 import nc.isi.fragaria_adapter_rewrite.resources.DataSourceMetadata;
 import nc.isi.fragaria_adapter_rewrite.resources.Datasource;
 import nc.isi.fragaria_adapter_rewrite.resources.DatasourceImpl;
-import nc.isi.fragaria_adapter_rewrite.resources.ResourceFinder;
 import nc.isi.fragaria_adapter_rewrite.resources.SpecificDsLoader;
-import nc.isi.fragaria_adapter_rewrite.utils.FileUtils;
+import nc.isi.fragaria_reflection.services.ResourceFinder;
+import nc.isi.fragaria_reflection.utils.FragariaFileUtils;
 
 import org.apache.log4j.Logger;
 
@@ -50,7 +50,7 @@ public class YamlDsLoader implements SpecificDsLoader {
 	}
 
 	private String getDsKey(String fileName) {
-		return FileUtils.removeExtension(fileName);
+		return FragariaFileUtils.removeExtension(fileName);
 	}
 
 	private DataSourceMetadata buildDsMetadata(File dsFile) throws IOException {
