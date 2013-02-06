@@ -14,7 +14,7 @@ public class QAModule {
 		configuration.add("test", SampleConnectionData.class.getName());
 	}
 
-	public void contributeResourceFinder(Configuration<String> configuration) {
+	public void contributeReflectionProvider(Configuration<String> configuration) {
 		configuration.add("nc.isi.fragaria_dsloader_yaml");
 	}
 
