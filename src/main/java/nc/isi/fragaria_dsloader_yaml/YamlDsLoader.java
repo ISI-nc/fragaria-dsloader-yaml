@@ -1,6 +1,5 @@
 package nc.isi.fragaria_dsloader_yaml;
 
-import java.io.File;
 import java.io.IOException;
 import java.util.Map;
 
@@ -32,12 +31,12 @@ public class YamlDsLoader implements SpecificDsLoader {
 			ConnectionDataBuilder builder) {
 		this.serializer = serializer;
 		this.builder = builder;
-		for (File dsFile : finder.getResourcesMatching(YAML_REG_EXP)) {
-			LOGGER.info(dsFile);
-			String dsKey = getDsKey(dsFile.getName());
+		for (String fileName : finder.getResourcesMatching(YAML_REG_EXP)) {
+			LOGGER.info("Ds file : " + fileName);
+			String dsKey = getDsKey(fileName);
 			try {
 				map.put(dsKey, new DatasourceImpl(dsKey,
-						buildDsMetadata(dsFile)));
+						buildDsMetadata(fileName)));
 			} catch (IOException e) {
 				throw new RuntimeException(e);
 			}
@@ -53,8 +52,9 @@ public class YamlDsLoader implements SpecificDsLoader {
 		return FragariaFileUtils.removeExtension(fileName);
 	}
 
-	private DataSourceMetadata buildDsMetadata(File dsFile) throws IOException {
-		YamlDatasourceMetadata yamlDs = serializer.serialize(dsFile,
+	private DataSourceMetadata buildDsMetadata(String fileName)
+			throws IOException {
+		YamlDatasourceMetadata yamlDs = serializer.serialize(fileName,
 				YamlDatasourceMetadata.class);
 		return new DataSourceMetadata(yamlDs.getType(), builder.build(
 				yamlDs.getType(), yamlDs.getConnectionData().values()),
