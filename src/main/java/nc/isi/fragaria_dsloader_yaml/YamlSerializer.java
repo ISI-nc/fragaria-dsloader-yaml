@@ -8,6 +8,7 @@ import java.io.InputStream;
 
 import org.yaml.snakeyaml.Yaml;
 
+
 public class YamlSerializer {
 
 	public <T> T serialize(File file, Class<T> clazz) throws IOException {

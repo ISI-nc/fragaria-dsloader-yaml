@@ -18,6 +18,17 @@
 			<artifactId>snakeyaml</artifactId>
 			<version>1.11</version>
 		</dependency>
+		<dependency>
+			<groupId>org.apache.tapestry</groupId>
+			<artifactId>tapestry-ioc</artifactId>
+			<version>${tapestry-release-version}</version>
+		</dependency>
+				<dependency>
+			<groupId>org.apache.tapestry</groupId>
+			<artifactId>tapestry-test</artifactId>
+			<version>${tapestry-release-version}</version>
+			<scope>test</scope>
+		</dependency>
 	</dependencies>
 	<build>
 		<finalName>fragaria-dsloader-yaml</finalName>
@@ -68,4 +79,18 @@
 			</plugin>
 		</plugins>
 	</reporting>
+	
+	<repositories>
+
+		<!-- This repository is only needed when the Tapestry version is a preview 
+			release, rather than a final release. -->
+		<repository>
+			<id>apache-staging</id>
+			<url>https://repository.apache.org/content/groups/staging/</url>
+		</repository>
+	</repositories>
+	
+	<properties>
+		<tapestry-release-version>5.4-alpha-2</tapestry-release-version>
+	</properties>
 </project>
