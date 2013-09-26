@@ -96,6 +96,6 @@
 	</repositories>
 	
 	<properties>
-		<tapestry-release-version>5.4-alpha-2</tapestry-release-version>
+		<tapestry-release-version>5.4-alpha-15</tapestry-release-version>
 	</properties>
 </project>
