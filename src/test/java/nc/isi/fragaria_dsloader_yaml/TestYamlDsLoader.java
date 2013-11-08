@@ -4,7 +4,6 @@ import junit.framework.TestCase;
 import nc.isi.fragaria_adapter_rewrite.resources.DataSourceMetadata;
 import nc.isi.fragaria_adapter_rewrite.resources.Datasource;
 import nc.isi.fragaria_adapter_rewrite.resources.DatasourceImpl;
-import nc.isi.fragaria_dsloader_yaml.YamlDsLoader;
 import nc.isi.fragaria_dsloader_yaml.model.QaRegistry;
 import nc.isi.fragaria_dsloader_yaml.model.SampleConnectionData;
 
@@ -32,5 +31,6 @@ public class TestYamlDsLoader extends TestCase {
 				dsFragariaConnectionData.getDbName()));
 		assertTrue(loadedConnectionData.getUrl().equals(
 				dsFragariaConnectionData.getUrl()));
+		
 	}
 }

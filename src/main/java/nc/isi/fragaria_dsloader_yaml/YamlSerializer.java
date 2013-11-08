@@ -5,6 +5,7 @@ import java.io.InputStream;
 
 import org.yaml.snakeyaml.Yaml;
 
+
 public class YamlSerializer {
 
 	public <T> T serialize(String fileName, Class<T> clazz) throws IOException {
